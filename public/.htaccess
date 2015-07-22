@@ -939,14 +939,14 @@ FileETag None
      RewriteEngine On
 
      # Stripe out version number on css/js
-     RewriteRule ^(.*)\.v[\d]+\.(css|js)$ $1.$2 [NC,L]
+     RewriteRule ^(.*)\.v[\d]+\.(css|js)$ $1.$2 [L]
 
      # remove trailing slash
-     # RewriteBase /portfolio 
      # RewriteRule ^(.*)/$ $1 [L,R=301]
 
      # Route everything to altorouter file
      RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
      RewriteRule . index.php [L]
 #     RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp)$ $1.$3 [L]
 </IfModule>

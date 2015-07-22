@@ -13,8 +13,8 @@ var focus 			 = require('postcss-focus');
 // Defining path variables
 var dirs = {
 	"src": "src",
-	"assets": "assets",
-	"views": "views",
+	"assets": "public/assets",
+	"views": "public/views",
 };
 
 var paths = {
@@ -46,6 +46,7 @@ gulp.task('script', function() {
 		this.emit('end');
 	}))
 	.pipe(plugins.concat('main.js'))
+	.pipe(plugins.babel())
 	.pipe(gulp.dest( dirs.assets + '/js/' ))
 	.pipe(plugins.uglify())
 	.pipe(plugins.rename('main.min.js'))
@@ -121,28 +122,6 @@ gulp.task('vendor',['bower'], function() {
 	// modernizr
 	gulp.src( 'src/vendor/modernizr/modernizr.js' )
 	.pipe(gulp.dest( dirs.assets + '/js/plugins' ));
-
-	// unveil
-	gulp.src( 'src/vendor/unveil/jquery.unveil.js' )
-	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
-
-	// isotope
-	gulp.src( 'src/vendor/isotope/dist/isotope.pkgd.min.js' )
-	.pipe(plugins.rename( 'isotope.js' ))
-	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
-
-	// media element assets
-	gulp.src( 'src/vendor/mediaelement/build/*.{png,svg,gif}' )
-	.pipe(gulp.dest( dirs.assets + '/css'));
-
-	// media element css
-	gulp.src( 'src/vendor/mediaelement/build/mediaelementplayer.css' )
-	.pipe(plugins.rename( 'mediaelementplayer.scss' ))
-	.pipe(gulp.dest( dirs.src + '/sass' ));
-
-	// media element js
-	gulp.src( 'src/vendor/mediaelement/build/mediaelement-and-player.min.js' )
-	.pipe(gulp.dest( dirs.src + '/js/scripts' ));
 
 });
 
