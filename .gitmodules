@@ -1,0 +1,3 @@
+[submodule "public/include/AltoRouter"]
+	path = public/include/AltoRouter
+	url = git@github.com:dannyvankooten/AltoRouter.git
