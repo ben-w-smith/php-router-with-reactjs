@@ -1,0 +1,23 @@
+{
+  "name": "StandardOptical",
+  "version": "1.0.0",
+  "authors": [
+    "Ben Smith <bsmith@lovecomm.net>"
+  ],
+  "description": "StandardOptical Portfolio",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src"
+  ],
+  "devDependencies": {
+    "materialize": "~0.97.0",
+    "modernizr": "~2.8.3",
+    "unveil": "~1.3.0",
+    "masonry": "~3.3.1",
+    "mediaelement": "~2.17.0",
+    "isotope": "~2.2.1"
+  }
+}

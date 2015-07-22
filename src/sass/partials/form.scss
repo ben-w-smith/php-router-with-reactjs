@@ -1,0 +1,57 @@
+/* label color */
+.input-field label {
+	// color: #000;
+
+	&:after {
+		width: 100%;
+	}
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+	color: $primary-color;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+	&:focus {
+		border-bottom: 1px solid $primary-color;
+		box-shadow: 0 1px 0 0 $primary-color;
+	}
+	&.valid {
+		// border-bottom: 1px solid #000;
+		// box-shadow: 0 1px 0 0 #000;
+	}
+	&.invalid {
+		// border-bottom: 1px solid #000;
+		// box-shadow: 0 1px 0 0 #000;
+	}
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+	color: $primary-color;
+}
+
+// Login Form
+//---
+form.login {
+	border: 3px solid $primary-color;
+	border-radius: 9px;
+
+	padding: $grid-gutter !important;
+
+	@extend .z-depth-1;
+
+	// Raised Button
+	.btn {
+		margin-top: 15px;
+		color: $button-color-raised;
+		background-color: $primary-color;
+
+		&:hover {
+			background-color: lighten($primary-color, 5%);
+		}
+	}
+
+	@media(min-width: $medium-screen-up) {
+		margin-top: 15vh;
+	}
+}
